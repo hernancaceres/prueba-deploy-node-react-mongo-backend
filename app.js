@@ -1,8 +1,10 @@
 
 import express from "express";
 import { indexRoutes } from "./routes/index.routes.js";
-const app = express();
+import "./database/db.js";
 import { settingDotEnv } from "./config.js";
+
+const app = express();
 
 const { port } = settingDotEnv();
 
