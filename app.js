@@ -1,19 +1,11 @@
 
 import express from "express";
 import { indexRoutes } from "./routes/index.routes.js";
-import "./database/db.js";
-import { settingDotEnv } from "./config.js";
+import { connectMongo } from "./database/db.js";
 
-const app = express();
-
-const { port } = settingDotEnv();
-
+export const app = express();
+connectMongo();
 
 app.use(express.json());
 app.use("/", indexRoutes);
 
-//servidor 
-const PORT = port || 5000;
-app.listen(PORT, () => {
-    console.log(`SERVER corriendo en: http://localhost:${PORT}`);
-});

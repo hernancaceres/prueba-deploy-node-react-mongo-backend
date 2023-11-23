@@ -2,9 +2,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-export const settingDotEnv = () => {
+export const settingDotEnvPort = () => {
+  return { port: process.env.PORT || 5000 };
+};
+
+export const settingDotEnvDb = () => {
   return {
-    port: process.env.PORT,
     db: {
       host: process.env.DB_HOST,
       localhost: process.env.DB_LOCALHOST,
