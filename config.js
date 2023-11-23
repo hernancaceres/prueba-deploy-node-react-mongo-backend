@@ -2,10 +2,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+//puerto
 export const settingDotEnvPort = () => {
-  return { port: process.env.PORT || 5000 };
+  return { port: process.env.PORT };
 };
 
+//base de datos
 export const settingDotEnvDb = () => {
   return {
     db: {
